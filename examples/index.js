@@ -1,4 +1,4 @@
-var HelloWorld = require('../src/index');
 var React = require('react');
+var HelloWorld = require('../src/index');
 
 React.renderComponent(HelloWorld(), document.body);
