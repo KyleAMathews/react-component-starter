@@ -11,7 +11,7 @@ release-major:
 
 build:
 	@$(BIN)/cjsx -cb -o dist src/index.cjsx
-	webpack
+	@$(BIN)/webpack
 
 publish:
 	git push --tags origin HEAD:master
@@ -21,7 +21,7 @@ publish:
 publish-gh-pages:
 	git checkout gh-pages
 	git merge master
-	webpack --config webpack.config.production.js
+	@$(BIN)/webpack --config webpack.config.production.js
 	cp examples/* .
 	git add --all .
 	git commit -m "New release"
