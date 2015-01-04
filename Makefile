@@ -13,6 +13,9 @@ build:
 	@$(BIN)/cjsx -cb -o dist src/index.cjsx
 	@$(BIN)/webpack
 
+watch:
+	@$(BIN)/webpack-dev-server -w
+
 publish:
 	git push --tags origin HEAD:master
 	@$(BIN)/cjsx -cb -o dist src/index.cjsx
