@@ -14,7 +14,7 @@ build:
 	@$(BIN)/webpack
 
 watch:
-	@$(BIN)/webpack-dev-server -w
+	@$(BIN)/webpack-dev-server --hot
 
 publish:
 	git push --tags origin HEAD:master
@@ -24,7 +24,7 @@ publish:
 publish-gh-pages:
 	git checkout gh-pages
 	git merge master
-	@$(BIN)/webpack --config webpack.production.config.js
+	@$(BIN)/webpack --config webpack.config.production.js
 	cp examples/* .
 	git add --all .
 	git commit -m "New release"
